@@ -1,0 +1,21 @@
+#Write a program to combine two dictionaries updating values for common keys.
+def tuple_to_list(arg_1,arg_2):
+    length = len(arg_1)
+    new_list = []
+    for i in range(length):
+        new_list += [(arg_1[i],int(arg_2[i]))]
+    return new_list
+
+a_1 = input().split()
+r_1 = input().split()
+a_2 = input().split()
+r_2 = input().split()
+
+result_1 = tuple_to_list(a_1,r_1)
+result_2 = tuple_to_list(a_2,r_2)
+for i in result_2:
+    result_1 += [(i)]
+dictionary = dict(result_1)
+list_ar = list((dictionary).items())
+list_ar.sort()
+print(list_ar)
